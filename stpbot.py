@@ -20,7 +20,7 @@ def echo(update: Update, context: CallbackContext) -> None:
     # We use OpenAI's GPT-3 to generate a response
     user_input = update.message.text
     # Here we add our fixed instruction. This will depend on your use case.
-    prompt = f"A user asks: '{user_input}'. Craft a helpful, informative response:"
+    prompt = f"A user asks: '{user_input}'. Please give essay a score and feedback as if you are an Academic IELTS instructor:"
 
     # We make the API request to GPT-3
     response = openai.Completion.create(engine="text-davinci-002", prompt=prompt, max_tokens=150)
